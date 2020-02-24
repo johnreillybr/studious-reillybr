@@ -1,5 +1,5 @@
 # ***
-# Arquivo: Extenso.py
+# Arquivo: extenso.py
 # Copyright (c) 1990-2020
 # John Reilly
 # Teste da Função para Tradução de Valor por Extenso
@@ -246,7 +246,10 @@ def extensogrupo(grupo_milhares, milhares, v_valor, prefixo):
         lista_extensogrupo.append(grupo_ext)
 
     # Adiciona R$, U$ ou E$ na string do formato moeda.
-    str_moeda = prefixo.upper() + '$ {}'.format(str_moeda)
+    prefixo = prefixo.upper()
+    if prefixo != 'U' and prefixo != 'E':
+        prefixo = 'R'
+    str_moeda = prefixo + '$ {}'.format(str_moeda)
 
     # extenso_completo receberá o valor por extenso concatenado.
     extenso_completo = concatena(lista_extensogrupo, grupo_milhares,
