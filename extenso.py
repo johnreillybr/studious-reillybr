@@ -2,7 +2,8 @@
 # Arquivo: extenso.py
 # Copyright (c) 1990-2020
 # John Reilly
-# Teste da Função para Tradução de Valor por Extenso
+# Teste da Função para Tradução
+# de Valor por Extenso em Python 3
 # ***
 
 from decimal import Decimal
@@ -79,7 +80,7 @@ def concatena(l_extensogrupo, g_milhares, n_milhares, v_prefixo, c_valor):
 
     # Terminações monetárias:
     # Converte para maiúsculo
-    v_prefixo = v_prefixo.upper()
+    v_prefixo = v_prefixo
     # Verifica e define real, dólar ou euro.
     if v_prefixo == 'U':
         msinplur = [' dólar', ' dólares']
@@ -246,7 +247,7 @@ def extensogrupo(grupo_milhares, milhares, v_valor, prefixo):
         lista_extensogrupo.append(grupo_ext)
 
     # Adiciona R$, U$ ou E$ na string do formato moeda.
-    prefixo = prefixo.upper()
+    prefixo = prefixo
     if prefixo != 'U' and prefixo != 'E':
         prefixo = 'R'
     str_moeda = prefixo + '$ {}'.format(str_moeda)
@@ -271,9 +272,10 @@ while valorin < 0 or valorin > 69999999999999.99:
     valorin = Decimal(input('Digite um valor de 0 a 69999999999999.99: '))
 
 currency = str(input('Digite U para Dolar, E para Euro ou R para Real.'
-                     '\nSe você digitar algo errado, o Real será adotado: '))
+                     '\nSe você digitar algo errado, o Real será adotado:'
+                     ' ')).upper().strip()[0]
 
 # Chama a função principal com parâmetros valor e o identificador 'u', 'e' ou 'r'.
 moedaEextenso = valextenso(valorin, currency)
-print('O extenso de {} é:'.format(moedaEextenso[0]))
+print('O extenso de {}{}{} é:'.format('\033[7;30m', moedaEextenso[0], '\033[m'))
 print(moedaEextenso[1])
