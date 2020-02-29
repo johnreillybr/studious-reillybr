@@ -278,6 +278,6 @@ currency = str(input('Digite U para Dolar, E para Euro ou R para Real.'
 
 # Chama a função principal com parâmetros valor e o identificador 'u', 'e' ou 'r'.
 moedaEextenso = valextenso(valorin, currency)
-print('O extenso de {}{}{} é:'
-      .format('\033[7;30m', moedaEextenso[0], '\033[m'))
+print('O extenso de {} é:'
+      .format(moedaEextenso[0]))
 print(moedaEextenso[1])
