@@ -1,10 +1,11 @@
-# ***
+##########################################
 # Arquivo: extenso.py
 # Copyright (c) 1990-2020
 # John Reilly
-# Teste da Função para Tradução
-# de Valor por Extenso em Python 3
-# ***
+# Teste da Função para Tradução de
+# Valor por Extenso em Python 3,
+# publicada no livro "Deus é Programador"
+##########################################
 
 from decimal import Decimal
 
@@ -277,5 +278,6 @@ currency = str(input('Digite U para Dolar, E para Euro ou R para Real.'
 
 # Chama a função principal com parâmetros valor e o identificador 'u', 'e' ou 'r'.
 moedaEextenso = valextenso(valorin, currency)
-print('O extenso de {}{}{} é:'.format('\033[7;30m', moedaEextenso[0], '\033[m'))
+print('O extenso de {}{}{} é:'
+      .format('\033[7;30m', moedaEextenso[0], '\033[m'))
 print(moedaEextenso[1])
